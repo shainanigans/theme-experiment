@@ -17,6 +17,15 @@
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
+import cssVars from 'css-vars-ponyfill';
+
+cssVars({
+  //   onlyLegacy: false,
+  watch: true,
+  onComplete(cssText, styleElms, cssVariables, benchmark) {
+    console.log(cssText, styleElms, cssVariables, benchmark);
+  }
+});
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
@@ -55,8 +64,7 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
