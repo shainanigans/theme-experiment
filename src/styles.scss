@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	background-color: var(--primary);
+	font-family: Helvetica, Aria, sans-serif;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+}
+p {
+	color: white;
+}
+input {
+	padding: 0.5rem;
+	border-radius: 3px;
+	border: 0;
+	&:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+}
+button {
+	padding: 0.5rem;
+	background-color: var(--secondary);
+	color: white;
+	border-radius: 3px;
+	border: 0;
+}
