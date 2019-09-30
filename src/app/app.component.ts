@@ -15,7 +15,17 @@ export class AppComponent implements OnInit {
     this.secondary = '60e1e0';
   }
 
+  /**
+   * Style must be removed and readded rather than modified
+   * In order to trigger the CSS Vars Ponyfill
+   */
   updateColor() {
+    const oldStyle = document.getElementById('cssVars');
+    const head = document.getElementsByTagName('head')[0];
+    head.removeChild(oldStyle);
+    const newStyle = document.createElement('style');
+    newStyle.id = 'cssVars';
+    head.appendChild(newStyle);
     const css =
       ' :root {' +
       '--primary: #' +
@@ -25,7 +35,6 @@ export class AppComponent implements OnInit {
       this.secondary +
       ';' +
       '}';
-    const style = document.getElementById('cssVars');
-    style.innerHTML = css;
+    newStyle.innerHTML = css;
   }
 }

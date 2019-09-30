@@ -20,7 +20,7 @@
 import cssVars from 'css-vars-ponyfill';
 
 cssVars({
-  //   onlyLegacy: false,
+  onlyLegacy: true,
   watch: true,
   onComplete(cssText, styleElms, cssVariables, benchmark) {
     console.log(cssText, styleElms, cssVariables, benchmark);
